@@ -1,0 +1,25 @@
+services:
+  app:
+    build: ./
+    container_name: ${PROJECT_NAME}_app_${PROJECT_ENV}
+    hostname: ${APP_SERVER_HOST}
+    environment:
+      - APP_SERVER_NAME=${APP_SERVER_NAME}
+      - APP_SERVER_PORT=${APP_SERVER_PORT}
+    volumes:
+      - .:/app
+      - app-modules:/app/node_modules
+      - app-dist:/app/dist
+    networks:
+      - main
+      
+networks:
+  main:
+    external: true
+    name: breakerino_main
+    
+volumes:
+  app-modules:
+    driver: local
+  app-dist:
+    driver: local
