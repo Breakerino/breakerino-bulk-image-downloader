@@ -23,6 +23,7 @@ node_modules
 
 # Vite
 dist
+.vite/cache
 **/tsconfig.tsbuildinfo
 **/vite.config.ts.timestamp-*
 
