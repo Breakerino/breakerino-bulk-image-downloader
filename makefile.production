@@ -4,5 +4,5 @@ stop:
 	- docker compose down
 restart:
 	- docker compose restart
-app-build:
-	- docker compose build app
+build:
+	- docker compose build
